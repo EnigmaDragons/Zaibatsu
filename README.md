@@ -27,7 +27,7 @@ Details on each are found below.
 
 ### Kanban Board
 
-[Project Kanban Board](https://zube.io/enigmadragons/zaibatsu/w/zaibatsu-all/edit)
+[Project Kanban Board](https://zube.io/enigmadragons/zaibatsu/w/zaibatsu-all/kanban)
 
 [Kanban Access Setup Guide](./KanbanGuide.md)
 
