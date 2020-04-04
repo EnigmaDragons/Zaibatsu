@@ -302,6 +302,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &993801874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 993801876}
+  - component: {fileID: 993801875}
+  m_Layer: 0
+  m_Name: Sequencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &993801875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993801874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6a0477591d31242be581b935b24407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dependencies: {fileID: 11400000, guid: b265ab31b6e92ea4da403a620ce4ea06, type: 2}
+  sequences:
+  - {fileID: 4900000, guid: 72832e074fab34340a135317375987aa, type: 3}
+  currentSequence: {fileID: 11400000, guid: 9c4d449cb980d6645a1aeb716e477e3f, type: 2}
+  currentVariables: {fileID: 0}
+  currentChoices: {fileID: 0}
+  sprites:
+  - {fileID: 11400000, guid: 3cf1d555b02883c4f84e0ce38c798e51, type: 2}
+--- !u!4 &993801876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993801874}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1083057152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1727690096897886389, guid: b485b4372b9d5aa4f8ece220d8e571d4,

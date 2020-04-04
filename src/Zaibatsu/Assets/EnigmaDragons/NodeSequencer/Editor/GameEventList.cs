@@ -2,9 +2,9 @@
 
 public static class GameEventList
 {
-    //Unfortunately any events you want to fire must be put in this static array
+    //A bit hacky
     public static Type[] Types = new Type[]
     {
-        typeof(object)
+        typeof(StoryPictureShown)
     };
 }
