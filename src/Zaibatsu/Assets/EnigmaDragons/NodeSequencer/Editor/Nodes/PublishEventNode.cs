@@ -53,7 +53,7 @@ public class PublishEventNode : INodeContent
             else if (typeof(ScriptableObject).IsAssignableFrom(prop.PropertyType))
             {
                 var items = ScriptableExtensions.GetAllInstances(prop.PropertyType);
-                var startValue = scriptables.FirstOrDefault(x => x.PropertyName == prop.Name && x.Type == prop.PropertyType.Name && items.Any(i => i.name == x.Name))
+                var startValue = scriptables.FirstOrDefault(x => x.PropertyName == prop.Name && x.Type == prop.PropertyType.Name && items.Any(item =>item.name == x.Name))
                     ?? new ScriptableNodeData { Name = items.First().name, PropertyName = prop.Name, Type = prop.PropertyType.Name };
 
                 _scriptables.Add(startValue);
@@ -104,7 +104,7 @@ public class PublishEventNode : INodeContent
                         _scriptables.Add(new ScriptableNodeData { Name = items.First().name, PropertyName = prop.Name, Type = prop.PropertyType.Name });
                         var i = _scriptables.Count - 1;
                         var dictionary = new Dictionary<string, Action>();
-                        items.ForEach(x => dictionary[x.name] = () => _scriptables[i].Name = x.name);
+                        items.ForEach(item => dictionary[item.name] = () => _scriptables[i].Name = item.name);
                         _propertyElements.Add(new ElementLabel(new OptionsElement(dictionary, _scriptables.Last().Name, 200), prop.Name));
                     }
                 });
@@ -123,7 +123,7 @@ public class PublishEventNode : INodeContent
         }
     }
 
-    public INodeContent Duplicate() => new PublishEventNode(_eventType, _properties);
+    public INodeContent Duplicate() => new PublishEventNode(_eventType, _properties, _scriptables);
     public string Save(IMediaType mediaType) => mediaType.ConvertTo(new PublishEventNodeData { EventType = _eventType, Properties = _properties });
 }
 
