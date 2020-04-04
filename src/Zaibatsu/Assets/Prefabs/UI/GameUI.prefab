@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 3014124721077237658}
   - component: {fileID: 3014124721077237656}
   - component: {fileID: 3014124721077237657}
+  - component: {fileID: 2012002233421832562}
   m_Layer: 5
   m_Name: DigitalClock
   m_TagString: Untagged
@@ -255,6 +256,20 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2012002233421832562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014124721077237659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a460ffd049704fa3a422573574088c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game: {fileID: 11400000, guid: 152ce7efc8805c2438d1c8e74b960280, type: 2}
+  ui: {fileID: 3014124721077237657}
 --- !u!1 &3168794882480270549
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,8 +713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901275b42f9b4736878196a2c503b510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: {fileID: 11400000, guid: 152ce7efc8805c2438d1c8e74b960280, type: 2}
-  counter: {fileID: 9216226526893516688}
+  game: {fileID: 11400000, guid: 152ce7efc8805c2438d1c8e74b960280, type: 2}
+  ui: {fileID: 9216226526893516688}
 --- !u!1 &6180052756551731653
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,8 +883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb8317c66aa44c5a5958f3273ce091d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: {fileID: 11400000, guid: 152ce7efc8805c2438d1c8e74b960280, type: 2}
-  counter: {fileID: 6031637044618859659}
+  game: {fileID: 11400000, guid: 152ce7efc8805c2438d1c8e74b960280, type: 2}
+  ui: {fileID: 6031637044618859659}
 --- !u!1 &6784921654470997897
 GameObject:
   m_ObjectHideFlags: 0
