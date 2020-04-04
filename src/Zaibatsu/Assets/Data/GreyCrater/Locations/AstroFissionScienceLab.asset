@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de2fa1d2fc254736a7c9851cbbdd6407, type: 3}
-  m_Name: BigCredBank
+  m_Name: AstroFissionScienceLab
   m_EditorClassIdentifier: 
-  displayName: Big Cred Bank
-  description: The city's most popular bank, due to their aggressive marketing campaigns.
-  geoPosition: {x: -272, y: -181}
-  locationPrefab: {fileID: 3356651567175709420, guid: 5fd6d09c70c6aac47ab3d59235025b7c,
+  displayName: AstroFission Science Lab
+  description: Where a scientist goes to rethink his plans to save the city
+  geoPosition: {x: 140, y: -138}
+  locationPrefab: {fileID: 8320948434907370682, guid: bc99d668536a9f54795dfacd94d31c7f,
     type: 3}
