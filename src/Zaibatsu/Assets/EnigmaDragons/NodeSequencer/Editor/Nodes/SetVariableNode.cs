@@ -9,13 +9,14 @@ public class SetVariableNode : INodeContent
     private readonly IElement _stringValueElement;
     private readonly IElement _intOperationElement;
     private readonly IElement _intValueElement;
-    private readonly BoolElement _boolValueElement;
+    private readonly IElement _boolValueElement;
 
     private string _name;
     private ConditionType _type;
     private string _stringValue;
     private IntOperation _intOperation;
     private int _intValue;
+    private bool _boolValue;
 
     public string Name => NodeTypes.SetVariable;
     public float Width => _variableNameElement.Width;
@@ -37,6 +38,7 @@ public class SetVariableNode : INodeContent
         _stringValue = stringValue;
         _intOperation = intOperation;
         _intValue = intValue;
+        _boolValue = boolValue;
         _variableNameElement = new ElementLabel(new ExpandingTextField(_name, x => _name = x), "Name");
         _variableTypeElement = new ElementLabel(new OptionsElement(new Dictionary<string, Action>
         {
@@ -51,7 +53,7 @@ public class SetVariableNode : INodeContent
             { nameof(IntOperation.Add), () => _intOperation = IntOperation.Add }
         }, Enum.GetName(typeof(IntOperation), _intOperation), 200), "Operation");
         _intValueElement = new ElementLabel(new ExpandingTextField(_intValue.ToString(), x => int.TryParse(x, out _intValue)), "Value");
-        _boolValueElement = new BoolElement("Value", boolValue, 200);
+        _boolValueElement = new BoolElement("Value", boolValue, x => _boolValue = x, 200);
     }
 
     public void Draw(Vector2 position)
@@ -69,7 +71,7 @@ public class SetVariableNode : INodeContent
         _variableNameElement.Draw(position);
     }
 
-    public INodeContent Duplicate() => new SetVariableNode(_name, _type, _stringValue, _intOperation, _intValue, _boolValueElement.Value);
+    public INodeContent Duplicate() => new SetVariableNode(_name, _type, _stringValue, _intOperation, _intValue, _boolValue);
 
     public string Save(IMediaType mediaType) => mediaType.ConvertTo(new SetVariableNodeData
     {
@@ -78,7 +80,7 @@ public class SetVariableNode : INodeContent
         StringValue = _stringValue,
         IntOperation = _intOperation,
         IntValue = _intValue,
-        BoolValue = _boolValueElement.Value
+        BoolValue = _boolValue
     });
 }
 

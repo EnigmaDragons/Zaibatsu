@@ -10,7 +10,7 @@ public class ConditionNode : INodeContent
     private readonly IElement _intComparisonElement;
     private readonly IElement _intValueElement;
     private readonly IElement _intValue2Element;
-    private readonly BoolElement _boolValueElement;
+    private readonly IElement _boolValueElement;
     private readonly IElement _addConditionButton;
     private readonly Action _addConditionNode;
 
@@ -20,6 +20,7 @@ public class ConditionNode : INodeContent
     private IntComparison _intComparison;
     private int _intValue;
     private int _intValue2;
+    private bool _boolValue;
 
     public string Name => NodeTypes.Condition;
     public float Width => _variableNameElement.Width;
@@ -43,6 +44,7 @@ public class ConditionNode : INodeContent
         _intComparison = intComparison;
         _intValue = intValue;
         _intValue2 = intValue2;
+        _boolValue = boolValue;
         _variableNameElement = new ElementLabel(new ExpandingTextField(_name, x => _name = x), "Name");
         _variableTypeElement = new ElementLabel(new OptionsElement(new Dictionary<string, Action>
         {
@@ -65,7 +67,7 @@ public class ConditionNode : INodeContent
         }, Enum.GetName(typeof(IntComparison), _intComparison).WithSpacesBetweenWords(), 200), "Comparison");
         _intValueElement = new ElementLabel(new ExpandingTextField(_intValue.ToString(), x => int.TryParse(x, out _intValue)), "Value");
         _intValue2Element = new ElementLabel(new ExpandingTextField(_intValue2.ToString(), x => int.TryParse(x, out _intValue2)), "Value 2");
-        _boolValueElement = new BoolElement("Value", boolValue, 200);
+        _boolValueElement = new BoolElement("Value", boolValue, x => _boolValue = x, 200);
         _addConditionButton = new TextButton("Add Condition", addConditionNode);
     }
 
@@ -89,7 +91,7 @@ public class ConditionNode : INodeContent
         _variableTypeElement.Draw(position);
     }
 
-    public INodeContent Duplicate() => new ConditionNode(_addConditionNode, _name, _type, _stringValue, _intComparison, _intValue, _intValue2, _boolValueElement.Value);
+    public INodeContent Duplicate() => new ConditionNode(_addConditionNode, _name, _type, _stringValue, _intComparison, _intValue, _intValue2, _boolValue);
 
     public string Save(IMediaType mediaType) => mediaType.ConvertTo(new ConditionNodeData
     {
@@ -99,7 +101,7 @@ public class ConditionNode : INodeContent
         IntComparison = _intComparison,
         IntValue = _intValue,
         IntValue2 = _intValue2,
-        BoolValue = _boolValueElement.Value
+        BoolValue = _boolValue
     });
 }
 
