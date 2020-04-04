@@ -9,4 +9,6 @@ public struct GameTime
     public string Time => $"{CurrentHour.ToString().PadLeft(2, '0')}:{CurrentMinute.ToString().PadLeft(2, '0')}";
 
     public GameTime(int totalMinutes) => TotalMinutes = totalMinutes;
+
+    public override string ToString() => Time;
 }
