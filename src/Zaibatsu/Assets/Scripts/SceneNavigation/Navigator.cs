@@ -11,6 +11,7 @@ public sealed class Navigator : ScriptableObject
 
     public void NavigateToMainMenu() => NavigateTo("MainMenu");
     public void NavigateToGameScene() => NavigateTo("GameScene");
+    public void NavigateToVictoryScene() => NavigateTo("VictoryScene");
     public void NavigateBack() => NavigateTo(_previousScene);
 
     public void ExitGame()
