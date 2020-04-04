@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fad412cf49f464daa1dae6e3be1928, type: 3}
   m_Name: CurrentSequence
   m_EditorClassIdentifier: 
-  Name: 
-  CurrentStepID: 
+  Name: Intro
+  CurrentStepID: af6aa98b-2ca6-427e-98b2-c2d3e8e57257
   NextStepID: 
   IsActive: 0
-  ShouldEnd: 0
+  ShouldEnd: 1

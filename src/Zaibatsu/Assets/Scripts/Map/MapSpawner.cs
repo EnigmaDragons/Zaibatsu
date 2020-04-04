@@ -25,5 +25,8 @@ public sealed class MapSpawner : MonoBehaviour
         var o = Instantiate(scientistPrototype, transform);
         var rectTransform = o.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = map.StartingLocation.GeoPosition;
+        var floating = o.GetComponent<Floating>();
+        if (floating != null)
+            floating.enabled = true;
     }
 }
