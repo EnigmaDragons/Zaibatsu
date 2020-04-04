@@ -15,3 +15,5 @@ MonoBehaviour:
   displayName: Big Cred Bank
   description: The city's most popular bank, due to their aggressive marketing campaigns.
   geoPosition: {x: -272, y: -181}
+  locationPrefab: {fileID: 3356651567175709420, guid: 5fd6d09c70c6aac47ab3d59235025b7c,
+    type: 3}
