@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15b21b8e216bb754a8aa17ab975971de, type: 3}
-  m_Name: Test
+  m_Name: RebootMachine
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 92e88fdb3fe1a994a9faa3548425bf3d, type: 3}
+  sprite: {fileID: 21300000, guid: 760985be25c5c5b4f8feffacc550aed3, type: 3}
