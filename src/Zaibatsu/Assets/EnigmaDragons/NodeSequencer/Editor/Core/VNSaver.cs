@@ -38,6 +38,8 @@ public class VNSaver
             SetSetVariableData(stepData, node, connections);
         else if (stepData.Type == NodeTypes.Switch)
             SetConditionalData(stepData, node, connections, nodes);
+        else if (stepData.Type == NodeTypes.PublishEvent)
+            SetPublishEventData(stepData, node, connections);
         return stepData;
     }
 
@@ -146,6 +148,23 @@ public class VNSaver
                 .Where(connection => connection.OutNodeID == node.ID && nodes.First(x => x.ID == connection.InNodeID).Type == NodeTypes.Condition)
                 .Select(connection => connection.InNodeID)
                 .ToList()
+        });
+    }
+
+    private void SetPublishEventData(SequenceStepData stepData, NodeData node, List<ConnectionData> connections)
+    {
+        var content = _mediaType.ConvertFrom<PublishEventNodeData>(node.Content);
+        stepData.Content = _mediaType.ConvertTo(new PublishEventData
+        {
+            NextID = GetNextID(node, connections),
+            EventType = content.EventType,
+            Properties = content.Properties,
+            Scriptables = content.Scriptables.Select(x => new ScriptableData
+            {
+                Name = x.Name,
+                PropertyName = x.PropertyName,
+                Type = x.Type
+            }).ToList()
         });
     }
 

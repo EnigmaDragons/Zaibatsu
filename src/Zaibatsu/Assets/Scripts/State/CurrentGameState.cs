@@ -11,6 +11,7 @@ public class CurrentGameState : SerializedScriptableObject
     [SerializeField] private int numCredits;
     [SerializeField] private int numNanoconstructors;
     [SerializeField] private string time;
+    [SerializeField] private CurrentSequence sequence;
     [SerializeField] private Location currentLocation;
 
     public GameState State  => gameState;
