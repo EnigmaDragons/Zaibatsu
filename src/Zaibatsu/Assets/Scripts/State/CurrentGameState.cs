@@ -7,14 +7,20 @@ using UnityEngine;
 public class CurrentGameState : SerializedScriptableObject 
 {
     [OdinSerialize] private GameState gameState = new GameState();
+    [SerializeField] private CurrentGameMap gameMap;
     [SerializeField] private int numCredits;
     [SerializeField] private int numNanoconstructors;
     [SerializeField] private string time;
     [SerializeField] private CurrentSequence sequence;
+    [SerializeField] private Location currentLocation;
 
     public GameState State  => gameState;
     
-    public void Init() => UpdateState(_ => new GameState());
+    public void Init()
+    {
+        UpdateState(_ => new GameState());
+        Message.Subscribe<CurrentLocationChanged>(msg => currentLocation = msg.Location, this);
+    }
 
     public void UpdateState(Action<GameState> apply)
     {

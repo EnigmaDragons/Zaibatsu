@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: CurrentGameMap
   m_EditorClassIdentifier: 
   map: {fileID: 11400000, guid: 99b0c4315694b284f8f0d651617abbd4, type: 2}
+  currentLocation: {fileID: 11400000, guid: 652193360b50e454f9f1bec70090126f, type: 2}

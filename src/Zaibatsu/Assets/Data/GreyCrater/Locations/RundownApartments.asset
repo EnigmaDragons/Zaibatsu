@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Rundown Apartments
   description: Low-budget aparment buildings in terrible disrepair
-  geoPosition: {x: 0, y: 0}
+  geoPosition: {x: 219, y: 289}
+  locationPrefab: {fileID: 8320948434907370682, guid: bc99d668536a9f54795dfacd94d31c7f,
+    type: 3}
