@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f12c9822ad864eeea6e1b99dc4258895, type: 3}
-  m_Name: CurrentGameMap
+  m_Script: {fileID: 11500000, guid: 110ce177a1154bdcbd3312114661dae9, type: 3}
+  m_Name: CurrentLocation
   m_EditorClassIdentifier: 
-  map: {fileID: 11400000, guid: 99b0c4315694b284f8f0d651617abbd4, type: 2}
-  currentLocation: {fileID: 11400000, guid: 652193360b50e454f9f1bec70090126f, type: 2}
+  location: {fileID: 11400000, guid: ac4d128271e9eec40ad4dc4a7132e85a, type: 2}

@@ -27,6 +27,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  gameMap: {fileID: 11400000, guid: 7cac53b18444c8b4d9b12188d905b631, type: 2}
   numCredits: 0
   numNanoconstructors: 0
-  time: 00:00
+  time: 00:27
+  currentLocation: {fileID: 0}

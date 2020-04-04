@@ -17,7 +17,7 @@ public sealed class MapSpawner : MonoBehaviour
         var o = Instantiate(nodePrototype, transform);
         var rectTransform = o.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = l.GeoPosition;
-        o.Init(l);
+        o.Init(map, l);
     }
 
     private void SpawnScientist()

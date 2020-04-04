@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameLabel: {fileID: 4012778093053604642}
   descriptionLabel: {fileID: 1789449567389767673}
+  button: {fileID: 2437062260474211187}
 --- !u!1 &2437062260474211185
 GameObject:
   m_ObjectHideFlags: 0
