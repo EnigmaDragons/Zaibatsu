@@ -21,5 +21,6 @@ public class Location2dSpawner : OnMessage<BeganTravellingToLocation>
             cached.SetActive(true);
         else
             _locations[location.DisplayName] = Instantiate(location.LocationPrefab, transform);
+        _locations[location.DisplayName].transform.SetAsFirstSibling();
     }
 }
