@@ -10,6 +10,8 @@ public class CurrentGameState : SerializedScriptableObject
     [SerializeField] private int numCredits;
     [SerializeField] private int numNanoconstructors;
     [SerializeField] private string time;
+
+    public GameState Current  => gameState;
     
     public void Init() => UpdateState(_ => new GameState());
     
