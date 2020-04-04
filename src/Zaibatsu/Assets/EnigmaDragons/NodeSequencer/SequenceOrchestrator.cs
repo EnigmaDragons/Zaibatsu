@@ -22,7 +22,10 @@ public abstract class SequenceOrchestrator : MonoBehaviour
         Message.Subscribe<SequenceStateChanged>(Execute, this);
         Message.Subscribe<SequenceStepFinished>(Execute, this);
         if (!string.IsNullOrWhiteSpace(currentSequence.Name))
+        {
             _sequence = _mediaType.ConvertFrom<SequenceData>(sequences.First(x => x.name == currentSequence.Name).text);
+            ProcessStep(_sequence.Steps.First(x => x.ID == _sequence.StartID));
+        }
     }
 
     private void OnDisable()

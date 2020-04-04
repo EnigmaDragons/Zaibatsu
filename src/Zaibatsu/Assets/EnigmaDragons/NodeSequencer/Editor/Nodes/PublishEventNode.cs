@@ -53,7 +53,7 @@ public class PublishEventNode : INodeContent
             else if (typeof(ScriptableObject).IsAssignableFrom(prop.PropertyType))
             {
                 var items = ScriptableExtensions.GetAllInstances(prop.PropertyType);
-                var startValue = scriptables.FirstOrDefault(x => x.PropertyName == prop.Name && x.Type == prop.PropertyType.Name && items.Any(item =>item.name == x.Name))
+                var startValue = _scriptables.FirstOrDefault(x => x.PropertyName == prop.Name && x.Type == prop.PropertyType.Name && items.Any(item =>item.name == x.Name))
                     ?? new ScriptableNodeData { Name = items.First().name, PropertyName = prop.Name, Type = prop.PropertyType.Name };
 
                 _scriptables.Add(startValue);
@@ -124,7 +124,7 @@ public class PublishEventNode : INodeContent
     }
 
     public INodeContent Duplicate() => new PublishEventNode(_eventType, _properties, _scriptables);
-    public string Save(IMediaType mediaType) => mediaType.ConvertTo(new PublishEventNodeData { EventType = _eventType, Properties = _properties });
+    public string Save(IMediaType mediaType) => mediaType.ConvertTo(new PublishEventNodeData { EventType = _eventType, Properties = _properties, Scriptables = _scriptables });
 }
 
 [Serializable]

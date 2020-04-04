@@ -23,12 +23,13 @@ MonoBehaviour:
     SerializationNodes:
     - Name: gameState
       Entry: 7
-      Data: 0|GameState, Assembly-CSharp
+      Data: 0|GameState, MainGame
     - Name: 
       Entry: 8
       Data: 
   gameMap: {fileID: 11400000, guid: 7cac53b18444c8b4d9b12188d905b631, type: 2}
   numCredits: 0
   numNanoconstructors: 0
-  time: 00:27
+  time: 00:20
+  sequence: {fileID: 11400000, guid: 9c4d449cb980d6645a1aeb716e477e3f, type: 2}
   currentLocation: {fileID: 0}
