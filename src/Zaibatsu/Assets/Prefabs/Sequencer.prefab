@@ -61,7 +61,8 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 3e437185b84cfb34d96ebd53e8a47a88, type: 3}
   currentSequence: {fileID: 11400000, guid: 9c4d449cb980d6645a1aeb716e477e3f, type: 2}
   currentVariables: {fileID: 11400000, guid: 676a2c9a4a19a6e4c86bb6969fb09dab, type: 2}
-  currentChoices: {fileID: 11400000, guid: 956783aeae9a88e4a9fec7f373424c62, type: 2}
+  _currentCurrentChoices: {fileID: 11400000, guid: 956783aeae9a88e4a9fec7f373424c62,
+    type: 2}
   strings: []
   ints: []
   bools: []
