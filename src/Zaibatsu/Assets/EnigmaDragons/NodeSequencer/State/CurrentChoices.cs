@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Choices : ScriptableObject
+public class CurrentChoices : ScriptableObject
 {
     public List<Choice> List
     {

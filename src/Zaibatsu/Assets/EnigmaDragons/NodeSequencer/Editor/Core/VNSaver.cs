@@ -180,7 +180,7 @@ public class VNSaver
         {
             NextIDs = nodes
                 .Where(childNode => connections.Any(connection => connection.OutNodeID == node.ID && connection.InNodeID == childNode.ID))
-                .Select(childNode => GetNextID(childNode, connections))
+                .Select(childNode => childNode.ID)
                 .ToArray()
         });
     }

@@ -9,7 +9,7 @@ public abstract class SequenceOrchestrator : MonoBehaviour
     [SerializeField] private List<TextAsset> sequences;
     [SerializeField] private CurrentSequence currentSequence;
     [SerializeField] private Variables currentVariables;
-    [SerializeField] private Choices currentChoices;
+    [SerializeField] private CurrentChoices _currentCurrentChoices;
 
     protected IMediaType _mediaType;
     private SequenceData _sequence;
@@ -100,10 +100,10 @@ public abstract class SequenceOrchestrator : MonoBehaviour
 
     private void GiveChoices(GiveChoicesData data)
     {
-        currentChoices.List = data.Choices
+        _currentCurrentChoices.List = data.Choices
             .Where(x => !x.HasCondition || ConditionMet(x.ConditionID))
             .Select(x => new Choice { NextID = x.NextID, Text = x.Choice }).ToList();
-        currentChoices.IsShowing = true;
+        _currentCurrentChoices.IsShowing = true;
         Message.Publish(new ChoicesGiven());
     }
 
