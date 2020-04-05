@@ -10,6 +10,8 @@ public class GameSequenceOrchestrator : SequenceOrchestrator
     [SerializeField] private SpriteResource[] sprites;
     [SerializeField] private Character[] characters;
     [SerializeField] private Location[] locations;
+    [SerializeField] private Item[] items;
+    [SerializeField] private CurrentGameState gameState;
 
     protected override void SetScriptableVariable(SetVariableData data)
     {
@@ -32,5 +34,14 @@ public class GameSequenceOrchestrator : SequenceOrchestrator
             property.SetValue(e, characters.First(x => x.name == data.Name));
         else if (data.Type == typeof(Location).Name)
             property.SetValue(e, locations.First(x => x.name == data.Name));
+        else if (data.Type == typeof(Item).Name)
+            property.SetValue(e, items.First(x => x.name == data.Name));
+    }
+
+    protected override bool IsCustomConditionMet(ConditionData data)
+    {
+        if (data.CustomType == NodeTypes.ItemPresentCondition)
+            return gameState.IsItemPresent(_mediaType.ConvertFrom<ItemPresentConditionData>(data.ConditionContent).Item);
+        return false;
     }
 }

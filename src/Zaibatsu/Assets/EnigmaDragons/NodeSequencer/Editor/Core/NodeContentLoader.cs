@@ -18,6 +18,8 @@ public class NodeContentLoader
             { NodeTypes.Condition, (mediaType, media, node) => new ConditionNode(() => addChoiceNode(node), mediaType, media) },
             { NodeTypes.PublishEvent, (mediaType, media, node) => new PublishEventNode(mediaType, media) },
             { NodeTypes.Random, (mediaType, media, node) => new RandomNode() },
+
+            { NodeTypes.ItemPresentCondition, (mediaType, media, node) => new ItemPresentConditionNode(mediaType, media) },
         };
     }
 

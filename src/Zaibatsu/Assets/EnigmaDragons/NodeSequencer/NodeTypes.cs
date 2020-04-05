@@ -8,4 +8,6 @@
     public const string PublishEvent = "Publish Event";
     public const string GoToSequence = "Go To Sequence";
     public const string Random = "Random";
+
+    public const string ItemPresentCondition = "Item Present";
 }

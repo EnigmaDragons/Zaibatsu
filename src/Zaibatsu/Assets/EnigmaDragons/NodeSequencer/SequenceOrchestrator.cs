@@ -11,11 +11,12 @@ public abstract class SequenceOrchestrator : MonoBehaviour
     [SerializeField] private Variables currentVariables;
     [SerializeField] private Choices currentChoices;
 
-    private IMediaType _mediaType;
+    protected IMediaType _mediaType;
     private SequenceData _sequence;
 
     protected abstract void PopulateScriptableOnEvent(object e, ScriptableData data);
     protected abstract void SetScriptableVariable(SetVariableData data);
+    protected abstract bool IsCustomConditionMet(ConditionData data);
 
     private void OnEnable()
     {
@@ -165,6 +166,8 @@ public abstract class SequenceOrchestrator : MonoBehaviour
             return AndCondtionMet(_mediaType.ConvertFrom<MultiConditionData>(condition.ConditionContent));
         if (condition.Type == ConditionType.Or)
             return OrConditionMet(_mediaType.ConvertFrom<MultiConditionData>(condition.ConditionContent));
+        if (condition.Type == ConditionType.Custom)
+            IsCustomConditionMet(condition);
         return false;
     }
 

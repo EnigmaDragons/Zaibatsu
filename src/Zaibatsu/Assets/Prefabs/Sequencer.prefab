@@ -45,15 +45,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dependencies: {fileID: 11400000, guid: b265ab31b6e92ea4da403a620ce4ea06, type: 2}
   sequences:
-  - {fileID: 4900000, guid: a05b8e90173ad1847ba429f83eef5553, type: 3}
-  - {fileID: 4900000, guid: 72832e074fab34340a135317375987aa, type: 3}
   - {fileID: 4900000, guid: 92ea67a4d01825d49b2e495131c32fa2, type: 3}
+  - {fileID: 4900000, guid: 27db5cb103924fb419f9dff8828cc8ce, type: 3}
+  - {fileID: 4900000, guid: 0603d6b0aa35a5345931ed7eb280843c, type: 3}
+  - {fileID: 4900000, guid: 72832e074fab34340a135317375987aa, type: 3}
   - {fileID: 4900000, guid: 514dbcefb8036a144b4cbc12c453d5a9, type: 3}
+  - {fileID: 4900000, guid: 21be5d7141b3e3147941933b02b8b74e, type: 3}
+  - {fileID: 4900000, guid: b150cec1363e62f4b87b1d4b511dbfc2, type: 3}
+  - {fileID: 4900000, guid: e45b4a6dd6454f64cbbfe27d4d6d9a0b, type: 3}
+  - {fileID: 4900000, guid: 2ad5f2d2a6432b2419e2e88002cc0384, type: 3}
+  - {fileID: 4900000, guid: a05b8e90173ad1847ba429f83eef5553, type: 3}
   - {fileID: 4900000, guid: b612eb651f682db4a8fbb784e8216fcf, type: 3}
   - {fileID: 4900000, guid: 446a4483311dcf94da7c1ba706039234, type: 3}
   currentSequence: {fileID: 11400000, guid: 9c4d449cb980d6645a1aeb716e477e3f, type: 2}
   currentVariables: {fileID: 11400000, guid: 676a2c9a4a19a6e4c86bb6969fb09dab, type: 2}
   currentChoices: {fileID: 0}
+  strings: []
+  ints: []
+  bools: []
   sprites:
   - {fileID: 11400000, guid: 228f0e10a5c1a594884793e867757722, type: 2}
   - {fileID: 11400000, guid: e750d1a3bd8e1064e946185fbf1c5a75, type: 2}
@@ -62,9 +71,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fde0b3561ebcb1e4e977ff48988bea7c, type: 2}
   characters:
   - {fileID: 11400000, guid: a46797a11fec90f429e3f9fdcc23530f, type: 2}
+  - {fileID: 11400000, guid: 6bb190ca8db795644b89fdd8b9823ecb, type: 2}
   locations:
   - {fileID: 11400000, guid: 23227a79e9f655040a524b2de91b08b1, type: 2}
   - {fileID: 11400000, guid: 022cce465749619449fe92879f231e0d, type: 2}
   - {fileID: 11400000, guid: ac4d128271e9eec40ad4dc4a7132e85a, type: 2}
   - {fileID: 11400000, guid: 6e2e58a6d8aa88644b790e42b42ddb19, type: 2}
   - {fileID: 11400000, guid: 1665d47ab67bde64f8312d33eedf048a, type: 2}
+  items:
+  - {fileID: 11400000, guid: 8495815db2a8c324b915ff26b633655b, type: 2}
+  - {fileID: 11400000, guid: aabb818fdfde46143963b1e3b7f39fc3, type: 2}
+  gameState: {fileID: 11400000, guid: 152ce7efc8805c2438d1c8e74b960280, type: 2}
