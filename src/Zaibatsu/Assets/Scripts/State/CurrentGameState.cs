@@ -17,6 +17,7 @@ public class CurrentGameState : SerializedScriptableObject
     [SerializeField] private CurrentSequence sequence;
     [SerializeField] private Variables variables;
     [SerializeField] private Location currentLocation;
+    [SerializeField] private Choices choices;
     [SerializeField] private List<Item> items;
     [SerializeField] private List<Blueprint> blueprints;
 
@@ -43,6 +44,7 @@ public class CurrentGameState : SerializedScriptableObject
         blueprints = new List<Blueprint>();
         calendar.Reset();
         gameMap.Reset();
+        choices.IsShowing = false;
         sequence.Name = dayStart.gameStartSequence;
         UpdateState(gs => gs.WithResetTransients().WithTime(dayStart.GameStartTimeMinutes));
     }
