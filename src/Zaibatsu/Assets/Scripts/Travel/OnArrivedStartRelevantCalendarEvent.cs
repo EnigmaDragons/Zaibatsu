@@ -9,5 +9,10 @@ public sealed class OnArrivedStartRelevantCalendarEvent : OnMessage<ArrivedAtLoc
     protected override void Execute(ArrivedAtLocation msg) 
         => calendar
             .LocalEventFor(msg.Location, game.State.Time)
-            .IfPresent(e => sequence.StartSequence(e.SequenceName));
+            .IfPresent(e =>
+            {
+                if (e.IsRecurring)
+                    calendar.MarkEventTriggered(e.Id);
+                sequence.StartSequence(e.SequenceName);
+            });
 }
