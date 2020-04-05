@@ -14,5 +14,10 @@ public static class GameEventList
         typeof(StopTalking),
         typeof(AllowMapTravel),
         typeof(DisableMapTravel),
+        typeof(GainItem),
+        typeof(LoseItem),
+        typeof(ModifyResources),
+        typeof(GainBlueprint),
+        typeof(RevealLocation),
     };
 }
