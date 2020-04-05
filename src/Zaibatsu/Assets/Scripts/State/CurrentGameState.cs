@@ -23,12 +23,14 @@ public class CurrentGameState : SerializedScriptableObject
         variables.Init();
         Message.Subscribe<CurrentLocationChanged>(msg => currentLocation = msg.Location, this);
         
+        gameMap.Init();
         sequence.Name = dayStart.gameStartSequence;
         UpdateState(_ => new GameState { CurrentRawGameTime = dayStart.GameStartTimeMinutes });
     }
 
     public void Reset()
     {
+        gameMap.Reset();
         sequence.Name = dayStart.gameStartSequence;
         UpdateState(_ => new GameState { CurrentRawGameTime = dayStart.GameStartTimeMinutes });
     }
@@ -48,7 +50,6 @@ public class CurrentGameState : SerializedScriptableObject
         numCredits = gameState.NumCredits;
         numNanoconstructors = gameState.NumNanoconstructors;
         time = gameState.Time.Time;
-        Debug.Log(time);
         Message.Publish(new GameStateChanged(gameState));
     }
 }

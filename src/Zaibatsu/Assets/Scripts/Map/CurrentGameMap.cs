@@ -11,6 +11,7 @@ public class CurrentGameMap : ScriptableObject
     public Location CurrentLocation => currentLocation.Location;
 
     public void Init() => currentLocation.SetLocation(StartingLocation);
+    public void Reset() => currentLocation.SetLocation(StartingLocation);
     
     public bool CanTravelTo(Location destination) => CanTravel(currentLocation.Location, destination);
     public bool CanTravel(Location source, Location destination) => true;
