@@ -1,4 +1,4 @@
-﻿public class NarratorStated
+﻿public class ShowNarratorStatement
 {
     public string Text { get; set; }
 }

@@ -1,1 +1,1 @@
-﻿public class PlayerDied {}
+﻿public class KillPlayer {}
