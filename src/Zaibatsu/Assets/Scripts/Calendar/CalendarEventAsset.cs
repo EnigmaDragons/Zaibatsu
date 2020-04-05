@@ -9,6 +9,7 @@ public class CalendarEventAsset : SerializedScriptableObject
     [SerializeField] private string startTime;
     [SerializeField] private string endTime;
     [SerializeField] private TextAsset sequence;
+    [SerializeField] private bool isRecurring;
 
     public CalendarEvent AsEvent() => new CalendarEvent
     {
@@ -16,6 +17,7 @@ public class CalendarEventAsset : SerializedScriptableObject
         Description = description,
         StartTime = startTime,
         EndTime = endTime,
-        SequenceName = sequence.name
+        SequenceName = sequence.name,
+        IsRecurring = isRecurring
     };
 }

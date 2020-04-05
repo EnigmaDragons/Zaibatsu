@@ -1,4 +1,5 @@
-﻿public class SpendTime
+﻿
+public class SpendTime
 {
-    public int Minuites { get; set; }
+    public int NumMinutes { get; set; }
 }
