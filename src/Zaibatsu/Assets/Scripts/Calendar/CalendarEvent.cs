@@ -9,6 +9,8 @@ public sealed class CalendarEvent
     public string EndTime { get; set; }
     public string SequenceName { get; set; }
     public bool IsRecurring { get; set; }
+
+    public string Id => $"{Location.DisplayName} {SequenceName}";
     
     public override string ToString() 
         => $"{Location.DisplayName}: {StartTime}-{EndTime} - {(IsRecurring ? "Recurring" : "Once")} - {Description}";

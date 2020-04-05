@@ -8,6 +8,8 @@ public sealed class CalendarGlobalEvent
     public string EndTime { get; set; }
     public string SequenceName { get; set; }
 
+    public string Id => $"Global {SequenceName}";
+    
     public override string ToString() => $"Global: {StartTime}-{EndTime} - {Description}";
 
     public bool IsActiveAt(GameTime time)
