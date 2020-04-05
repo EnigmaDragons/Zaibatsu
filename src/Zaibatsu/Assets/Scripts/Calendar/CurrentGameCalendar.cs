@@ -62,7 +62,8 @@ public class CurrentGameCalendar : ScriptableObject
         // TODO: Data partitioning later for performance
         foreach(var e in staticCalendar.AllGlobalEvents)
             if (e.IsActiveAt(time))
-                return e;
+                if (!_completedEvents.Contains(e.Id))
+                    return e;
         return Maybe<CalendarGlobalEvent>.Missing();
     }
 }

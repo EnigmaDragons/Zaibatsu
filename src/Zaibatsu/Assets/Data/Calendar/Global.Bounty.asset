@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf6dcfc020c43178f9380adce3d4b42, type: 3}
+  m_Name: Global.Bounty
+  m_EditorClassIdentifier: 
+  description: a bounty has been posted for Aiden
+  startTime: 9:00
+  endTime: 18:00
+  sequence: {fileID: 4900000, guid: 06e9802ba1edbf74bb8a1218f5f31196, type: 3}
