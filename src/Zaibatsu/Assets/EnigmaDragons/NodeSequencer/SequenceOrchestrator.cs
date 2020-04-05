@@ -53,6 +53,8 @@ public abstract class SequenceOrchestrator : MonoBehaviour
 
     protected void Execute(SequenceStepFinished msg)
     {
+        if (!currentSequence.IsActive)
+            return;
         if (currentSequence.ShouldEnd)
         {
             currentSequence.IsActive = false;

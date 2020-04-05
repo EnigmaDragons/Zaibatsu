@@ -8,5 +8,7 @@ public class TravelRequestProcessor : OnMessage<GoToLocation>
     {
         if (map.CanTravelTo(msg.Location))
             Message.Publish(new BeganTravellingToLocation(map.CurrentLocation, msg.Location));
+        //TODO cleanup
+        Message.Publish(new SequenceStepFinished());
     }
 }
