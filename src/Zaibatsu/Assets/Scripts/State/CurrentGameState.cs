@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine;
@@ -15,11 +16,13 @@ public class CurrentGameState : SerializedScriptableObject
     [SerializeField] private CurrentSequence sequence;
     [SerializeField] private Variables variables;
     [SerializeField] private Location currentLocation;
+    [SerializeField] private List<Item> items;
 
     public GameState State  => gameState;
     
     public void Init()
     {
+        items = new List<Item>();
         variables.Init();
         Message.Subscribe<CurrentLocationChanged>(msg => currentLocation = msg.Location, this);
         
@@ -30,9 +33,22 @@ public class CurrentGameState : SerializedScriptableObject
 
     public void Reset()
     {
+        items = new List<Item>();
         gameMap.Reset();
         sequence.Name = dayStart.gameStartSequence;
         UpdateState(_ => new GameState { CurrentRawGameTime = dayStart.GameStartTimeMinutes });
+    }
+
+    public void AddItem(Item item)
+    {
+        items.Add(item);
+        UpdateState(gs => gs.Items.Add(item.DisplayName));
+    }
+
+    public void RemoveItem(Item item)
+    {
+        items.Remove(item);
+        UpdateState(gs => gs.Items.Remove(item.DisplayName));
     }
     
     public void UpdateState(Action<GameState> apply)
