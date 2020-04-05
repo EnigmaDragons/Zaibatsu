@@ -228,6 +228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftCorridor
       objectReference: {fileID: 0}
+    - target: {fileID: 7388980474034706568, guid: aa7f1fb475b38dd49ab41210dfd1e053,
+        type: 3}
+      propertyPath: asset
+      value: 
+      objectReference: {fileID: 4900000, guid: b612eb651f682db4a8fbb784e8216fcf, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa7f1fb475b38dd49ab41210dfd1e053, type: 3}
 --- !u!224 &5625297911458464781 stripped
