@@ -46,7 +46,7 @@ public class CurrentGameCalendar : ScriptableObject
         // TODO: Data partitioning later for performance
         foreach(var e in staticCalendar.AllLocalEvents)
             if (e.Location == location && e.IsActiveAt(time))
-                if (!e.IsRecurring || !_completedEvents.Contains(e.Id))
+                if (e.IsRecurring || !_completedEvents.Contains(e.Id))
                     return e;
         return Maybe<CalendarEvent>.Missing();
     }

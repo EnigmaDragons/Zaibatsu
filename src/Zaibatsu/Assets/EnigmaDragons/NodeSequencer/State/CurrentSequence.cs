@@ -16,4 +16,10 @@ public class CurrentSequence : ScriptableObject
         IsActive = true;
         Message.Publish(new SequenceStateChanged());
     }
+
+    public void PickChoice(string nextStepID)
+    {
+        NextStepID = nextStepID;
+        Message.Publish(new SequenceStepFinished());
+    }
 }

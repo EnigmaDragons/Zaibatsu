@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ea549f499264008a0d431c0ddd8dab9, type: 3}
-  m_Name: HomeLab.Wait
+  m_Name: ZaibatsuHQ.SecurityPosted
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,9 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  location: {fileID: 0}
-  description: Allows the player to skip 30 minutes
-  startTime: 8:00
-  endTime: 20:00
-  sequence: {fileID: 4900000, guid: 0603d6b0aa35a5345931ed7eb280843c, type: 3}
+  location: {fileID: 11400000, guid: 1665d47ab67bde64f8312d33eedf048a, type: 2}
+  description: Security has been alerted that you might be coming
+  startTime: 
+  endTime: 
+  sequence: {fileID: 4900000, guid: 8a0b1ec37ac6d314b9e049348cb3fe29, type: 3}
   isRecurring: 0
