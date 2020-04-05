@@ -14,5 +14,5 @@ public sealed class CalendarGlobalEvent
 
     public bool IsActiveAt(GameTime time)
         => time.TotalMinutes >= GameTime.Parse(StartTime).TotalMinutes
-           && time.TotalMinutes < GameTime.Parse(EndTime).TotalMinutes;
+           && time.TotalMinutes <= GameTime.Parse(EndTime).TotalMinutes;
 }

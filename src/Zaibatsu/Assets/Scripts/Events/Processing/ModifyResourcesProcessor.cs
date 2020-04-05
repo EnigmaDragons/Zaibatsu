@@ -4,9 +4,13 @@ public class ModifyResourcesProcessor : OnMessage<ModifyResources>
 {
     [SerializeField] private CurrentGameState game;
 
-    protected override void Execute(ModifyResources msg) => game.UpdateState(gs =>
+    protected override void Execute(ModifyResources msg)
     {
-        gs.NumCredits += msg.CreditsAdjustment;
-        gs.NumNanoconstructors += msg.NanoConstructorsAdjustment;
-    });
+        game.UpdateState(gs =>
+        {
+            gs.NumCredits += msg.CreditsAdjustment;
+            gs.NumNanoconstructors += msg.NanoConstructorsAdjustment;
+        });
+        Message.Publish(new SequenceStepFinished());
+    }
 }
