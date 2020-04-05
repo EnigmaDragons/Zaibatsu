@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de2fa1d2fc254736a7c9851cbbdd6407, type: 3}
-  m_Name: Sewers
+  m_Name: TownSquare
   m_EditorClassIdentifier: 
-  displayName: Sewers
-  description: A damp, dark, dank place with lots of rats and toxic sludge
-  geoPosition: {x: 0, y: 0}
-  locationPrefab: {fileID: 5583383733583031304, guid: 16f014679f536394fa7ecb8fe06f7e9f,
+  displayName: Town Square
+  description: The central hub of the bustling city. Strangely, people aren't usually
+    out and about unless it's night.
+  geoPosition: {x: 219, y: 289}
+  locationPrefab: {fileID: 1713746907770748585, guid: 35a72f10cefa4b94889584d1b6116f6b,
     type: 3}
