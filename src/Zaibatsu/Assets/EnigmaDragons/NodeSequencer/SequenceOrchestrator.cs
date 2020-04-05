@@ -28,8 +28,8 @@ public abstract class SequenceOrchestrator : MonoBehaviour
     {
         if (!string.IsNullOrWhiteSpace(currentSequence.Name))
         {
-            _sequence = _mediaType.ConvertFrom<SequenceData>(sequences.First(x => x.name == currentSequence.Name).text);
-            ProcessStep(_sequence.Steps.First(x => x.ID == _sequence.StartID));
+            currentSequence.IsActive = true;
+            Execute(new SequenceStateChanged());
         }
     }
 
@@ -129,6 +129,7 @@ public abstract class SequenceOrchestrator : MonoBehaviour
         }
         return data.ElseNextID;
     }
+
     private bool ConditionMet(string conditionID)
     {
         return ConditionMet(_mediaType.ConvertFrom<ConditionData>(_sequence.Steps.First(x => x.ID == conditionID).Content));
