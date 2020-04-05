@@ -17,13 +17,31 @@ public class CurrentGameCalendar : ScriptableObject
     {
         _completedEvents = new HashSet<string>();
     }
+    
+    public void StartEventIfApplicable(CurrentSequence seq, Location currentLocation, GameTime currentTime)
+    {
+        var globalEvent = GlobalEventFor(currentTime);
+        if (globalEvent.IsPresent)
+        {
+            MarkEventTriggered(globalEvent.Value.Id);
+            seq.StartSequence(globalEvent.Value.SequenceName);
+            return;
+        }
 
-    public void MarkEventTriggered(string id)
+        var localEvent = LocalEventFor(currentLocation, currentTime);
+        if (localEvent.IsPresent)
+        {
+            MarkEventTriggered(localEvent.Value.Id);
+            seq.StartSequence(localEvent.Value.SequenceName);
+        }
+    }
+
+    private void MarkEventTriggered(string id)
     {
         _completedEvents.Add(id);
     }
     
-    public Maybe<CalendarEvent> LocalEventFor(Location location, GameTime time)
+    private Maybe<CalendarEvent> LocalEventFor(Location location, GameTime time)
     {
         // TODO: Data partitioning later for performance
         foreach(var e in staticCalendar.AllLocalEvents)
@@ -33,7 +51,7 @@ public class CurrentGameCalendar : ScriptableObject
         return Maybe<CalendarEvent>.Missing();
     }
 
-    public Maybe<CalendarGlobalEvent> GlobalEventFor(GameTime time)
+    private Maybe<CalendarGlobalEvent> GlobalEventFor(GameTime time)
     {
         // TODO: Data partitioning later for performance
         foreach(var e in staticCalendar.AllGlobalEvents)
