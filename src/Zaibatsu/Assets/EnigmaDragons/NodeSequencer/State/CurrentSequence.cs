@@ -8,6 +8,7 @@ public class CurrentSequence : ScriptableObject
     public string NextStepID;
     public bool IsActive;
     public bool ShouldEnd;
+    public bool IsDebug;
 
     public void StartSequence(string name)
     {

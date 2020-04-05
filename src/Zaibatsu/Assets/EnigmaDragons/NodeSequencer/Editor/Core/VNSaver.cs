@@ -40,6 +40,8 @@ public class VNSaver
             SetConditionalData(stepData, node, connections, nodes);
         else if (stepData.Type == NodeTypes.PublishEvent)
             SetPublishEventData(stepData, node, connections);
+        else if (stepData.Type == NodeTypes.Random)
+            SetRandomData(stepData, node, connections, nodes);
         return stepData;
     }
 
@@ -166,6 +168,17 @@ public class VNSaver
                 PropertyName = x.PropertyName,
                 Type = x.Type
             }).ToList()
+        });
+    }
+
+    private void SetRandomData(SequenceStepData stepData, NodeData node, List<ConnectionData> connections, List<NodeData> nodes)
+    {
+        stepData.Content = _mediaType.ConvertTo(new RandomData
+        {
+            NextIDs = nodes
+                .Where(childNode => connections.Any(connection => connection.OutNodeID == node.ID && connection.InNodeID == childNode.ID))
+                .Select(childNode => GetNextID(childNode, connections))
+                .ToArray()
         });
     }
 

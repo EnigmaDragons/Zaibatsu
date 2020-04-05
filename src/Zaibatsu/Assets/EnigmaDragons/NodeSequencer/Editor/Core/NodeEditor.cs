@@ -220,6 +220,7 @@ public class NodeEditor : EditorWindow
         genericMenu.AddItem(new GUIContent(NodeTypes.SetVariable), false, () => _nodes = _nodes.With(CreateNode(new SetVariableNode(variableNameSupplier), mousePosition)));
         genericMenu.AddItem(new GUIContent(NodeTypes.Switch), false, () => _nodes = _nodes.With(CreateNode(x => new ConditionalNode(() => AddConditionNode(x)), mousePosition)));
         genericMenu.AddItem(new GUIContent(NodeTypes.PublishEvent), false, () => _nodes = _nodes.With(CreateNode(x => new PublishEventNode(), mousePosition)));
+        genericMenu.AddItem(new GUIContent(NodeTypes.Random), false, () => _nodes = _nodes.With(CreateNode(x => new RandomNode(), mousePosition)));
         genericMenu.ShowAsContext();
     }
 

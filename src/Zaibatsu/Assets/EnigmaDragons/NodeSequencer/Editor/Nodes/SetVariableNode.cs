@@ -30,7 +30,7 @@ public class SetVariableNode : INodeContent
 
     public SetVariableNode(VariableNameSupplier variableNameSupplier, IMediaType mediaType, string media) 
         : this(variableNameSupplier, mediaType.ConvertFrom<SetVariableNodeData>(media)) {}
-    public SetVariableNode(VariableNameSupplier variableNameSupplier) : this(variableNameSupplier, "", true, ConditionType.String, "", IntOperation.Set, 0, true) {}
+    public SetVariableNode(VariableNameSupplier variableNameSupplier) : this(variableNameSupplier, "", false, ConditionType.String, "", IntOperation.Set, 0, true) {}
     private SetVariableNode(VariableNameSupplier variableNameSupplier, SetVariableNodeData data) 
         : this(variableNameSupplier, data.Name, data.Scriptable, data.Type, data.StringValue, data.IntOperation, data.IntValue, data.BoolValue) {}
 

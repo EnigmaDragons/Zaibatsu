@@ -63,6 +63,8 @@ public abstract class SequenceOrchestrator : MonoBehaviour
 
     private void ProcessStep(SequenceStepData step)
     {
+        if (currentSequence.IsDebug)
+            Debug.Log($"{step.Type} {step.Content}");
         currentSequence.CurrentStepID = step.ID;
         if (step.Type == NodeTypes.GoToSequence)
             GoToSequence(_mediaType.ConvertFrom<GoToSequenceData>(step.Content));
@@ -70,6 +72,8 @@ public abstract class SequenceOrchestrator : MonoBehaviour
             PublishEvent(_mediaType.ConvertFrom<PublishEventData>(step.Content));
         if (step.Type == NodeTypes.Choices)
             GiveChoices(_mediaType.ConvertFrom<GiveChoicesData>(step.Content));
+        if (step.Type == NodeTypes.Random)
+            Random(_mediaType.ConvertFrom<RandomData>(step.Content));
         if (step.Type == NodeTypes.SetVariable)
             SetVariable(_mediaType.ConvertFrom<SetVariableData>(step.Content));
         if (step.Type == NodeTypes.Switch)
@@ -98,6 +102,12 @@ public abstract class SequenceOrchestrator : MonoBehaviour
             .Select(x => new Choice { NextID = x.NextID, Text = x.Choice }).ToList();
         currentChoices.IsShowing = true;
         Message.Publish(new ChoicesGiven());
+    }
+
+    private void Random(RandomData data)
+    {
+        SetNextID(data.NextIDs.Random());
+        Message.Publish(new SequenceStepFinished());
     }
 
     private void SetVariable(SetVariableData data)
