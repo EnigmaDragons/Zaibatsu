@@ -3,9 +3,25 @@ using UnityEngine;
 
 public class GameSequenceOrchestrator : SequenceOrchestrator
 {
+    [SerializeField] private StringVariable[] strings;
+    [SerializeField] private IntVariable[] ints;
+    [SerializeField] private BoolVariable[] bools;
+
     [SerializeField] private SpriteResource[] sprites;
     [SerializeField] private Character[] characters;
     [SerializeField] private Location[] locations;
+
+    protected override void SetScriptableVariable(SetVariableData data)
+    {
+        if (data.Type == ConditionType.String)
+            strings.First(x => x.name == data.VariableName).Value = data.StringValue;
+        else if (data.Type == ConditionType.Int && data.IntOperation == IntOperation.Set)
+            ints.First(x => x.name == data.VariableName).Value = data.IntValue;
+        else if (data.Type == ConditionType.Int && data.IntOperation == IntOperation.Add)
+            ints.First(x => x.name == data.VariableName).Value += data.IntValue;
+        else if (data.Type == ConditionType.Bool)
+            bools.First(x => x.name == data.VariableName).Value = data.BoolValue;
+    }
 
     protected override void PopulateScriptableOnEvent(object e, ScriptableData data)
     {

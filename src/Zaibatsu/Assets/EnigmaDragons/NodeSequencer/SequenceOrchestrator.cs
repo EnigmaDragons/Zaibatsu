@@ -15,6 +15,7 @@ public abstract class SequenceOrchestrator : MonoBehaviour
     private SequenceData _sequence;
 
     protected abstract void PopulateScriptableOnEvent(object e, ScriptableData data);
+    protected abstract void SetScriptableVariable(SetVariableData data);
 
     private void OnEnable()
     {
@@ -102,14 +103,21 @@ public abstract class SequenceOrchestrator : MonoBehaviour
     private void SetVariable(SetVariableData data)
     {
         SetNextID(data.NextID);
-        if (data.Type == ConditionType.String)
-            currentVariables.SetString(data.VariableName, data.StringValue);
-        else if (data.Type == ConditionType.Int && data.IntOperation == IntOperation.Set)
-            currentVariables.SetInt(data.VariableName, data.IntValue);
-        else if (data.Type == ConditionType.Int && data.IntOperation == IntOperation.Add)
-            currentVariables.AddInt(data.VariableName, data.IntValue);
-        else if (data.Type == ConditionType.Bool)
-            currentVariables.SetBool(data.VariableName, data.BoolValue);
+        if (!data.Scriptable)
+        {
+            if (data.Type == ConditionType.String)
+                currentVariables.SetString(data.VariableName, data.StringValue);
+            else if (data.Type == ConditionType.Int && data.IntOperation == IntOperation.Set)
+                currentVariables.SetInt(data.VariableName, data.IntValue);
+            else if (data.Type == ConditionType.Int && data.IntOperation == IntOperation.Add)
+                currentVariables.AddInt(data.VariableName, data.IntValue);
+            else if (data.Type == ConditionType.Bool)
+                currentVariables.SetBool(data.VariableName, data.BoolValue);
+        }
+        else
+        {
+            SetScriptableVariable(data);
+        }
         Message.Publish(new SequenceStepFinished());
     }
 

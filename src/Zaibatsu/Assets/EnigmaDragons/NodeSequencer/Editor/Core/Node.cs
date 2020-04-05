@@ -93,7 +93,10 @@ public class Node : INode
     }
 
     public string Save(IMediaType mediaType)
-        => mediaType.ConvertTo(new NodeData { ID = ID, X = _rect.x, Y = _rect.y, Type = _content.Name, Content = _content.Save(mediaType) });
+        => mediaType.ConvertTo(PrepSerialize(mediaType));
+
+    public NodeData PrepSerialize(IMediaType mediaType)
+        => new NodeData { ID = ID, X = _rect.x, Y = _rect.y, Type = _content.Name, Content = _content.Save(mediaType) };
 }
 
 [Serializable]
