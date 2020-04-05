@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ca4ea0f4484ebe83933e45d734dd21, type: 3}
   m_Name: GreyCraterCalendar
   m_EditorClassIdentifier: 
-  eventAssets:
-  - {fileID: 11400000, guid: d3be4a59354573e4180b3c9ad59e01e7, type: 2}
+  eventAssets: []
   events: []
