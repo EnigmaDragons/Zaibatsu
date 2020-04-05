@@ -12,12 +12,14 @@ public class CurrentGameState : SerializedScriptableObject
     [SerializeField] private int numNanoconstructors;
     [SerializeField] private string time;
     [SerializeField] private CurrentSequence sequence;
+    [SerializeField] private Variables variables;
     [SerializeField] private Location currentLocation;
 
     public GameState State  => gameState;
     
     public void Init()
     {
+        variables.Init();
         UpdateState(_ => new GameState());
         Message.Subscribe<CurrentLocationChanged>(msg => currentLocation = msg.Location, this);
     }

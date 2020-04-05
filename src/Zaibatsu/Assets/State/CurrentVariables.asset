@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9fad412cf49f464daa1dae6e3be1928, type: 3}
-  m_Name: CurrentSequence
+  m_Script: {fileID: 11500000, guid: 89f2bdd2d06c7d84585c08c0bd20de77, type: 3}
+  m_Name: CurrentVariables
   m_EditorClassIdentifier: 
-  Name: Start
-  CurrentStepID: 7e173235-7da2-4aa7-a333-489683397e33
-  NextStepID: 7a40ce52-90a2-4b77-827e-492eee889a69
-  IsActive: 0
-  ShouldEnd: 1
+  dependencies: {fileID: 11400000, guid: b265ab31b6e92ea4da403a620ce4ea06, type: 2}

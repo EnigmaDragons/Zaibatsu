@@ -18,6 +18,7 @@ public abstract class SequenceOrchestrator : MonoBehaviour
 
     private void OnEnable()
     {
+        currentVariables.Init();
         _mediaType = dependencies.MediaType;
         Message.Subscribe<SequenceStateChanged>(Execute, this);
         Message.Subscribe<SequenceStepFinished>(Execute, this);
