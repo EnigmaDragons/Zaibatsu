@@ -9,4 +9,5 @@ public sealed class GameState
     public GameTime Time => new GameTime(CurrentRawGameTime);
     public int CurrentRawGameTime { get; set; }
     public List<string> Items { get; set; } = new List<string>();
+    public bool MapTravelAllowed { get; set; } = true;
 }
