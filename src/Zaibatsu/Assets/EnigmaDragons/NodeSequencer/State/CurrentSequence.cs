@@ -9,7 +9,7 @@ public class CurrentSequence : ScriptableObject
     public bool IsActive;
     public bool ShouldEnd;
 
-    public void ChangeSequence(string name)
+    public void StartSequence(string name)
     {
         Name = name;
         IsActive = true;

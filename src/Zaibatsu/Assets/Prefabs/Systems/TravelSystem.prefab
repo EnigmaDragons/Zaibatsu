@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4650872086770460930}
   - component: {fileID: 4650872086770460940}
   - component: {fileID: 3478591697882558640}
+  - component: {fileID: 203975420839806676}
   m_Layer: 0
   m_Name: TravelSystem
   m_TagString: Untagged
@@ -72,3 +73,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 11400000, guid: 7cac53b18444c8b4d9b12188d905b631, type: 2}
+--- !u!114 &203975420839806676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4650872086770460929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b970fb8a824ae5b466dd3cb34f07a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calendar: {fileID: 11400000, guid: da643d8c477265649bcf131e7106f59c, type: 2}
+  game: {fileID: 11400000, guid: 152ce7efc8805c2438d1c8e74b960280, type: 2}
+  sequence: {fileID: 11400000, guid: 9c4d449cb980d6645a1aeb716e477e3f, type: 2}

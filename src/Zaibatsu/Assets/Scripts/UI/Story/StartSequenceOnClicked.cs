@@ -9,5 +9,5 @@ public class StartSequenceOnClicked : MonoBehaviour
 
     public void Awake() 
         => GetComponent<Button>().onClick.AddListener(
-            () => seq.ChangeSequence(asset.name));
+            () => seq.StartSequence(asset.name));
 }
