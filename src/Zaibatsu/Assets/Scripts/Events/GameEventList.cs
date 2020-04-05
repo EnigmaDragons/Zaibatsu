@@ -12,5 +12,7 @@ public static class GameEventList
         typeof(ThinkToSelf),
         typeof(TalkToCharacter),
         typeof(StopTalking),
+        typeof(AllowMapTravel),
+        typeof(DisableMapTravel),
     };
 }
