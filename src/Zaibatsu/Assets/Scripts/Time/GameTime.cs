@@ -12,6 +12,9 @@ public struct GameTime
 
     public override string ToString() => Time;
 
+    public static GameTime operator +(GameTime f, GameTime s) => new GameTime(f.TotalMinutes + s.TotalMinutes); 
+    public static GameTime operator +(GameTime v, int minutes) => new GameTime(v.TotalMinutes + minutes); 
+    
     public static GameTime Parse(string hhmm)
     {
         if (TryParse(hhmm, out var time))
