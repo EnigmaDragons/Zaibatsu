@@ -6,9 +6,11 @@ public static class GameEventList
     public static Type[] Types = new Type[]
     {
         typeof(ShowStoryImage),
-        typeof(ShowNarratorStatement),
         typeof(KillPlayer),
         typeof(ShowCharacterStatement),
         typeof(GoToLocation),
+        typeof(ThinkToSelf),
+        typeof(TalkToCharacter),
+        typeof(StopTalking),
     };
 }
