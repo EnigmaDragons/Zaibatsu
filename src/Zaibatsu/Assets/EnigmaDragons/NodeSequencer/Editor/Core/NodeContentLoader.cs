@@ -6,14 +6,14 @@ public class NodeContentLoader
 {
     private readonly Dictionary<string, Func<IMediaType, string, Node, INodeContent>> _loadContent;
 
-    public NodeContentLoader(Action<Node> addChoiceNode, Action<Node> addConditionNode, Action<Node> addConditionalChoice, Func<List<string>> getDialogues)
+    public NodeContentLoader(Action<Node> addChoiceNode, Action<Node> addConditionNode, Action<Node> addConditionalChoice, Func<List<string>> getDialogues, VariableNameSupplier nameSupplier)
     {
         _loadContent = new Dictionary<string, Func<IMediaType, string, Node, INodeContent>>
         {
             { NodeTypes.Choices, (mediaType, media, node) => new ChoicesNode(() => addChoiceNode(node), () => addConditionalChoice(node)) },
             { NodeTypes.Choice, (mediaType, media, node) => new ChoiceNode(mediaType, media) },
             { NodeTypes.GoToSequence, (mediaType, media, node) => new GoToDialogueNode(getDialogues(), mediaType, media) },
-            { NodeTypes.SetVariable, (mediaType, media, node) => new SetVariableNode(mediaType, media) },
+            { NodeTypes.SetVariable, (mediaType, media, node) => new SetVariableNode(nameSupplier, mediaType, media) },
             { NodeTypes.Switch, (mediaType, media, node) => new ConditionalNode(() => addConditionNode(node)) },
             { NodeTypes.Condition, (mediaType, media, node) => new ConditionNode(() => addChoiceNode(node), mediaType, media) },
             { NodeTypes.PublishEvent, (mediaType, media, node) => new PublishEventNode(mediaType, media) },

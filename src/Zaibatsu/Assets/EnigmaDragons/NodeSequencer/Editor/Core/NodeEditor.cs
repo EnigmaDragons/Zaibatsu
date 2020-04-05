@@ -23,6 +23,7 @@ public class NodeEditor : EditorWindow
     private ConnectionPoint _selectedOutPoint;
     private NodeContentLoader _nodeContentLoader;
     private IMediaType _mediaType = new JsonMediaType();
+    private VariableNameSupplier variableNameSupplier;
     private VNSaver _vnSaver;
 
     [MenuItem("Window/Dialogue Editor")]
@@ -33,7 +34,8 @@ public class NodeEditor : EditorWindow
         if (_init)
             return;
         _vnSaver = new VNSaver(new JsonFileStorage(() => Application.dataPath + "/Dialogues/", ".txt"), _mediaType);
-        _nodeContentLoader = new NodeContentLoader(AddChoiceNode, x => AddConditionNode(x), AddConditionalChoiceNode, GetDialogueNames);
+        variableNameSupplier = new VariableNameSupplier(() => _nodes.Select(x => x.PrepSerialize(_mediaType)).ToList(), _mediaType);
+        _nodeContentLoader = new NodeContentLoader(AddChoiceNode, x => AddConditionNode(x), AddConditionalChoiceNode, GetDialogueNames, variableNameSupplier);
         _menuBar = new NodeEditorMenuBar(this, Save, Load, New, Center, ResetZoom);
         _menuBar.DialogueName = "Untitled";
         _startNode = new StartNode(new Vector2(this.position.width / 2, this.position.height / 3), OnClickConnectionPoint);
@@ -215,7 +217,7 @@ public class NodeEditor : EditorWindow
         var genericMenu = new GenericMenu();
         genericMenu.AddItem(new GUIContent(NodeTypes.Choices), false, () => _nodes = _nodes.With(CreateNode(x => new ChoicesNode(() => AddChoiceNode(x), () => AddConditionalChoiceNode(x)), mousePosition)));
         genericMenu.AddItem(new GUIContent(NodeTypes.GoToSequence), false, () => _nodes = _nodes.With(CreateNode(new GoToDialogueNode(GetDialogueNames()), mousePosition)));
-        genericMenu.AddItem(new GUIContent(NodeTypes.SetVariable), false, () => _nodes = _nodes.With(CreateNode(new SetVariableNode(), mousePosition)));
+        genericMenu.AddItem(new GUIContent(NodeTypes.SetVariable), false, () => _nodes = _nodes.With(CreateNode(new SetVariableNode(variableNameSupplier), mousePosition)));
         genericMenu.AddItem(new GUIContent(NodeTypes.Switch), false, () => _nodes = _nodes.With(CreateNode(x => new ConditionalNode(() => AddConditionNode(x)), mousePosition)));
         genericMenu.AddItem(new GUIContent(NodeTypes.PublishEvent), false, () => _nodes = _nodes.With(CreateNode(x => new PublishEventNode(), mousePosition)));
         genericMenu.ShowAsContext();

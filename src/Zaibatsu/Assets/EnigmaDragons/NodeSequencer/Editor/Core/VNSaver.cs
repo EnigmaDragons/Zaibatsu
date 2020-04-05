@@ -130,6 +130,7 @@ public class VNSaver
         {
             NextID = GetNextID(node, connections),
             VariableName = content.Name,
+            Scriptable = content.Scriptable,
             Type = content.Type,
             StringValue = content.StringValue,
             IntOperation = content.IntOperation,
