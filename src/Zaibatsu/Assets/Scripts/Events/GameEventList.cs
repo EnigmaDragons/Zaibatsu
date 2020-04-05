@@ -20,5 +20,7 @@ public static class GameEventList
         typeof(GainBlueprint),
         typeof(RevealLocation),
         typeof(SpendTime),
+        typeof(WinGame),
+        typeof(AddCalendarEvent),
     };
 }
