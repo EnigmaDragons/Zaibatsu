@@ -19,14 +19,7 @@ public sealed class MapLocationNode : MonoBehaviour
         descriptionLabel.text = l.Description;
     }
     
-    private void Awake()
-    {
-        button.onClick.AddListener(TravelToLocation);
-    }
+    private void Awake() => button.onClick.AddListener(TravelToLocation);
 
-    private void TravelToLocation()
-    {
-        if (_map.CanTravelTo(_location))
-            Message.Publish(new BeganTravellingToLocation(_map.CurrentLocation, _location));
-    }
+    private void TravelToLocation() => Message.Publish(new GoToLocation { Location = _location });
 }
