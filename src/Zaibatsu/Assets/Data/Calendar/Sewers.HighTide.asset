@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ea549f499264008a0d431c0ddd8dab9, type: 3}
-  m_Name: Sewer.ZaibatsuGuardBody
+  m_Name: Sewers.HighTide
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   location: {fileID: 11400000, guid: ac4d128271e9eec40ad4dc4a7132e85a, type: 2}
-  description: Zaibatsu Guard Body Chip Event
-  startTime: 13:00
-  endTime: 19:00
-  sequence: {fileID: 4900000, guid: e45b4a6dd6454f64cbbfe27d4d6d9a0b, type: 3}
+  description: The player is unable to get body and must wait
+  startTime: 10:00
+  endTime: 13:00
+  sequence: {fileID: 4900000, guid: 2ad5f2d2a6432b2419e2e88002cc0384, type: 3}
+  isRecurring: 0
