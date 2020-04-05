@@ -71,10 +71,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fde0b3561ebcb1e4e977ff48988bea7c, type: 2}
   characters:
   - {fileID: 11400000, guid: a46797a11fec90f429e3f9fdcc23530f, type: 2}
+  - {fileID: 11400000, guid: 6bb190ca8db795644b89fdd8b9823ecb, type: 2}
   locations:
   - {fileID: 11400000, guid: 23227a79e9f655040a524b2de91b08b1, type: 2}
   - {fileID: 11400000, guid: 022cce465749619449fe92879f231e0d, type: 2}
   - {fileID: 11400000, guid: ac4d128271e9eec40ad4dc4a7132e85a, type: 2}
   - {fileID: 11400000, guid: 6e2e58a6d8aa88644b790e42b42ddb19, type: 2}
   - {fileID: 11400000, guid: 1665d47ab67bde64f8312d33eedf048a, type: 2}
+  items:
+  - {fileID: 11400000, guid: 8495815db2a8c324b915ff26b633655b, type: 2}
+  - {fileID: 11400000, guid: aabb818fdfde46143963b1e3b7f39fc3, type: 2}
   gameState: {fileID: 11400000, guid: 152ce7efc8805c2438d1c8e74b960280, type: 2}
