@@ -18,6 +18,7 @@ public class CurrentGameState : SerializedScriptableObject
     [SerializeField] private Variables variables;
     [SerializeField] private Location currentLocation;
     [SerializeField] private List<Item> items;
+    [SerializeField] private List<Blueprint> blueprints;
 
     public GameState State  => gameState;
     public Location CurrentLocation => currentLocation;
@@ -26,24 +27,38 @@ public class CurrentGameState : SerializedScriptableObject
     public void Init()
     {
         items = new List<Item>();
+        blueprints = new List<Blueprint>();
         variables.Init();
         calendar.Init();
         Message.Subscribe<CurrentLocationChanged>(msg => currentLocation = msg.Location, this);
         
         gameMap.Init();
         sequence.Name = dayStart.gameStartSequence;
-        UpdateState(_ => new GameState { CurrentRawGameTime = dayStart.GameStartTimeMinutes });
+        UpdateState(gs => new GameState { CurrentRawGameTime = dayStart.GameStartTimeMinutes });
     }
 
     public void Reset()
     {
         items = new List<Item>();
+        blueprints = new List<Blueprint>();
         calendar.Reset();
         gameMap.Reset();
         sequence.Name = dayStart.gameStartSequence;
-        UpdateState(_ => new GameState { CurrentRawGameTime = dayStart.GameStartTimeMinutes });
+        UpdateState(gs => gs.WithResetTransients().WithTime(dayStart.GameStartTimeMinutes));
     }
 
+    public void AddBlueprint(Blueprint blueprint)
+    {
+        blueprints.Add(blueprint);
+        UpdateState(gs => gs.Blueprints.Add(blueprint.DisplayName));
+    }
+
+    public void RemoveBlueprint(Blueprint blueprint)
+    {
+        blueprints.Remove(blueprint);
+        UpdateState(gs => gs.Blueprints.Remove(blueprint.DisplayName));
+    }
+    
     public void AddItem(Item item)
     {
         items.Add(item);
