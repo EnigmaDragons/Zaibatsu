@@ -19,5 +19,6 @@ public static class GameEventList
         typeof(ModifyResources),
         typeof(GainBlueprint),
         typeof(RevealLocation),
+        typeof(SpendTime),
     };
 }
