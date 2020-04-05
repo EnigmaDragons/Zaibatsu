@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4650872086770460931}
   - component: {fileID: 4650872086770460930}
   - component: {fileID: 4650872086770460940}
+  - component: {fileID: 3478591697882558640}
   m_Layer: 0
   m_Name: TravelSystem
   m_TagString: Untagged
@@ -58,3 +59,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeHiding: 1
+--- !u!114 &3478591697882558640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4650872086770460929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fd2e1c9880440fa913709322fa678d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  map: {fileID: 11400000, guid: 7cac53b18444c8b4d9b12188d905b631, type: 2}

@@ -322,12 +322,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 11400000, guid: 152ce7efc8805c2438d1c8e74b960280, type: 2}
   secondsPerGameMinute: 0.5
---- !u!1 &1520457535 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4637984856021754001, guid: e5a07d6801e1e8a4aa5f6750895a1e76,
-    type: 3}
-  m_PrefabInstance: {fileID: 7795091147391907777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1864179597
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,41 +985,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Views
-      objectReference: {fileID: 0}
-    - target: {fileID: 4637984856021754001, guid: e5a07d6801e1e8a4aa5f6750895a1e76,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5515305917540236302, guid: e5a07d6801e1e8a4aa5f6750895a1e76,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5515305917540236302, guid: e5a07d6801e1e8a4aa5f6750895a1e76,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5515305917540236302, guid: e5a07d6801e1e8a4aa5f6750895a1e76,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7795091146898666104, guid: e5a07d6801e1e8a4aa5f6750895a1e76,
-        type: 3}
-      propertyPath: targets.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7795091146898666104, guid: e5a07d6801e1e8a4aa5f6750895a1e76,
-        type: 3}
-      propertyPath: targets.Array.data[0]
-      value: 
-      objectReference: {fileID: 1520457535}
-    - target: {fileID: 7795091148316449842, guid: e5a07d6801e1e8a4aa5f6750895a1e76,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5a07d6801e1e8a4aa5f6750895a1e76, type: 3}
