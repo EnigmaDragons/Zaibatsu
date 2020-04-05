@@ -7,6 +7,7 @@ using UnityEngine;
 public class CurrentGameState : SerializedScriptableObject 
 {
     [OdinSerialize] private GameState gameState = new GameState();
+    [SerializeField] private GameDayStartState dayStart;
     [SerializeField] private CurrentGameMap gameMap;
     [SerializeField] private int numCredits;
     [SerializeField] private int numNanoconstructors;
@@ -20,10 +21,18 @@ public class CurrentGameState : SerializedScriptableObject
     public void Init()
     {
         variables.Init();
-        UpdateState(_ => new GameState());
         Message.Subscribe<CurrentLocationChanged>(msg => currentLocation = msg.Location, this);
+        
+        sequence.Name = dayStart.gameStartSequence;
+        UpdateState(_ => new GameState { CurrentRawGameTime = dayStart.GameStartTimeMinutes });
     }
 
+    public void Reset()
+    {
+        sequence.Name = dayStart.gameStartSequence;
+        UpdateState(_ => new GameState { CurrentRawGameTime = dayStart.GameStartTimeMinutes });
+    }
+    
     public void UpdateState(Action<GameState> apply)
     {
         UpdateState(_ =>
@@ -35,10 +44,11 @@ public class CurrentGameState : SerializedScriptableObject
     
     public void UpdateState(Func<GameState, GameState> apply)
     {
-        apply(gameState);
+        gameState = apply(gameState);
         numCredits = gameState.NumCredits;
         numNanoconstructors = gameState.NumNanoconstructors;
         time = gameState.Time.Time;
+        Debug.Log(time);
         Message.Publish(new GameStateChanged(gameState));
     }
 }

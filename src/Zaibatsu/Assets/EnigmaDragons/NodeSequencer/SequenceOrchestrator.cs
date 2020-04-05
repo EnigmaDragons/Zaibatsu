@@ -22,6 +22,10 @@ public abstract class SequenceOrchestrator : MonoBehaviour
         _mediaType = dependencies.MediaType;
         Message.Subscribe<SequenceStateChanged>(Execute, this);
         Message.Subscribe<SequenceStepFinished>(Execute, this);
+    }
+
+    private void Start()
+    {
         if (!string.IsNullOrWhiteSpace(currentSequence.Name))
         {
             _sequence = _mediaType.ConvertFrom<SequenceData>(sequences.First(x => x.name == currentSequence.Name).text);

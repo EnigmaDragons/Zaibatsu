@@ -27,10 +27,11 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  dayStart: {fileID: 11400000, guid: 3f67a05477bf14844a46a4e8d2cd661b, type: 2}
   gameMap: {fileID: 11400000, guid: 7cac53b18444c8b4d9b12188d905b631, type: 2}
   numCredits: 0
   numNanoconstructors: 0
-  time: 00:12
+  time: 00:51
   sequence: {fileID: 11400000, guid: 9c4d449cb980d6645a1aeb716e477e3f, type: 2}
   variables: {fileID: 11400000, guid: 676a2c9a4a19a6e4c86bb6969fb09dab, type: 2}
-  currentLocation: {fileID: 0}
+  currentLocation: {fileID: 11400000, guid: 3568f5ee1ad1f3d4486028052bde259e, type: 2}
