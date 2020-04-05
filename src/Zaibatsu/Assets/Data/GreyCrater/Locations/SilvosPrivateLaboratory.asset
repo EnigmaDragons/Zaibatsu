@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Silvos Private Laboratory
   description: Stolen by the Consortium
-  geoPosition: {x: 0, y: 0}
+  geoPosition: {x: 430, y: -310}
   locationPrefab: {fileID: 4119423536675733389, guid: 6f8e3a1d6255c0340a39b34aa7c81ca3,
     type: 3}
