@@ -9,5 +9,6 @@ public static class GameEventList
         typeof(NarratorStated),
         typeof(PlayerDied),
         typeof(CharacterStated),
+        typeof(GoToLocation),
     };
 }
