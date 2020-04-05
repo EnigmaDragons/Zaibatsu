@@ -17,6 +17,7 @@ public class CurrentGameState : SerializedScriptableObject
     [SerializeField] private CurrentSequence sequence;
     [SerializeField] private Variables variables;
     [SerializeField] private Location currentLocation;
+    [SerializeField] private Choices choices;
     [SerializeField] private List<Item> items;
 
     public GameState State  => gameState;
@@ -40,6 +41,7 @@ public class CurrentGameState : SerializedScriptableObject
         items = new List<Item>();
         calendar.Reset();
         gameMap.Reset();
+        choices.IsShowing = false;
         sequence.Name = dayStart.gameStartSequence;
         UpdateState(_ => new GameState { CurrentRawGameTime = dayStart.GameStartTimeMinutes });
     }
