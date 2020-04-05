@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7348186337778327274}
   - component: {fileID: 3195641610566546751}
   - component: {fileID: 2741875842305348392}
+  - component: {fileID: 1642467204425867000}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -100,6 +101,19 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &1642467204425867000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955347668226950275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9525e0c1a6734dd69600b30e4e560c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapAccess: {fileID: 5472379549922129720}
 --- !u!1 &3014124720160515343
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +126,7 @@ GameObject:
   - component: {fileID: 3014124720160515340}
   - component: {fileID: 3014124720160515341}
   - component: {fileID: 3014124720160515342}
+  - component: {fileID: 3464680762629646603}
   m_Layer: 5
   m_Name: GameUI
   m_TagString: Untagged
@@ -201,6 +216,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
+--- !u!114 &3464680762629646603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014124720160515343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b61fc6c9fa4647986fcbae775fda1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game: {fileID: 11400000, guid: 152ce7efc8805c2438d1c8e74b960280, type: 2}
 --- !u!1 &3014124721077237659
 GameObject:
   m_ObjectHideFlags: 0
