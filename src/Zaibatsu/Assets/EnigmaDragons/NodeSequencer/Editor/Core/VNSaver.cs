@@ -42,6 +42,8 @@ public class VNSaver
             SetPublishEventData(stepData, node, connections);
         else if (stepData.Type == NodeTypes.Random)
             SetRandomData(stepData, node, connections, nodes);
+        else if (stepData.Type == NodeTypes.ItemPresentCondition)
+            SetItemPresentConditionData(stepData, node, connections);
         return stepData;
     }
 
@@ -99,7 +101,7 @@ public class VNSaver
                     HasCondition = false
                 })
                 .Concat(nodes
-                    .Where(conditionNode => conditionNode.Type == NodeTypes.Condition 
+                    .Where(conditionNode => (conditionNode.Type == NodeTypes.Condition || conditionNode.Type == NodeTypes.ItemPresentCondition) 
                         && connections.Any(connection => connection.OutNodeID == node.ID && connection.InNodeID == conditionNode.ID)
                         && connections.Any(connection => connection.OutNodeID == conditionNode.ID 
                             && nodes.Any(choiceNode => connection.InNodeID == choiceNode.ID && choiceNode.Type == NodeTypes.Choice)))
@@ -148,7 +150,8 @@ public class VNSaver
             ElseNextID = connections.Where(connection => connection.OutNodeID == node.ID)
                 .FirstOrDefault(connection => nodes.First(x => x.ID == connection.InNodeID).Type != NodeTypes.Condition)?.InNodeID,
             ConditionIDs = connections
-                .Where(connection => connection.OutNodeID == node.ID && nodes.First(x => x.ID == connection.InNodeID).Type == NodeTypes.Condition)
+                .Where(connection => connection.OutNodeID == node.ID && (nodes.First(x => x.ID == connection.InNodeID).Type == NodeTypes.Condition 
+                    || nodes.First(x => x.ID == connection.InNodeID).Type == NodeTypes.ItemPresentCondition))
                 .Select(connection => connection.InNodeID)
                 .ToList()
         });
@@ -179,6 +182,19 @@ public class VNSaver
                 .Where(childNode => connections.Any(connection => connection.OutNodeID == node.ID && connection.InNodeID == childNode.ID))
                 .Select(childNode => GetNextID(childNode, connections))
                 .ToArray()
+        });
+    }
+
+    private void SetItemPresentConditionData(SequenceStepData stepData, NodeData node, List<ConnectionData> connections)
+    {
+        var content = _mediaType.ConvertFrom<ItemPresentConditionNodeData>(node.Content);
+        var conditionContent = _mediaType.ConvertTo(new ItemPresentConditionData { Item = content.ItemName });
+        stepData.Content = _mediaType.ConvertTo(new ConditionData
+        {
+            NextID = GetNextID(node, connections),
+            Type = ConditionType.Custom,
+            ConditionContent = conditionContent,
+            CustomType = NodeTypes.ItemPresentCondition
         });
     }
 

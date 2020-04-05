@@ -4,5 +4,6 @@
     Int,
     Bool,
     And,
-    Or
+    Or,
+    Custom,
 }

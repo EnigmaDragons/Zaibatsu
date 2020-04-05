@@ -52,4 +52,6 @@ public class CurrentGameState : SerializedScriptableObject
         time = gameState.Time.Time;
         Message.Publish(new GameStateChanged(gameState));
     }
+
+    public bool IsItemPresent(string item) => gameState.Items.Contains(item);
 }
