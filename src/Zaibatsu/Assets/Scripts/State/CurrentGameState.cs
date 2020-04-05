@@ -20,7 +20,9 @@ public class CurrentGameState : SerializedScriptableObject
     [SerializeField] private List<Item> items;
 
     public GameState State  => gameState;
-    
+    public Location CurrentLocation => currentLocation;
+    public GameTime Time => gameState.Time;
+
     public void Init()
     {
         items = new List<Item>();
