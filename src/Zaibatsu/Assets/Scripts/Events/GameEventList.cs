@@ -6,7 +6,7 @@ public static class GameEventList
     public static Type[] Types = new Type[]
     {
         typeof(StoryPictureShown),
-        typeof(NarratedStated),
+        typeof(NarratorStated),
         typeof(PlayerDied),
         typeof(CharacterStated),
     };
