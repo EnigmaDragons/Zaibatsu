@@ -59,6 +59,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e750d1a3bd8e1064e946185fbf1c5a75, type: 2}
   - {fileID: 11400000, guid: 57212246b463bc5458105610984c266c, type: 2}
   - {fileID: 11400000, guid: cada720b6b68967499159b9924d76046, type: 2}
+  - {fileID: 11400000, guid: fde0b3561ebcb1e4e977ff48988bea7c, type: 2}
   characters:
   - {fileID: 11400000, guid: a46797a11fec90f429e3f9fdcc23530f, type: 2}
   locations:
