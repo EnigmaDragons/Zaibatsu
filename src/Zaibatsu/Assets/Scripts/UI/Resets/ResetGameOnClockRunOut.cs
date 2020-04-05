@@ -9,4 +9,4 @@ public class ResetGameOnClockRunOut : OnMessage<GameStateChanged>
         if (msg.State.CurrentRawGameTime > gameEndTimeMinutes)
             Message.Publish(new ResetDay());
     }
-}De
+}
