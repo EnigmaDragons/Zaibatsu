@@ -84,4 +84,10 @@ MonoBehaviour:
   items:
   - {fileID: 11400000, guid: 8495815db2a8c324b915ff26b633655b, type: 2}
   - {fileID: 11400000, guid: aabb818fdfde46143963b1e3b7f39fc3, type: 2}
+  calenderEvents:
+  - {fileID: 11400000, guid: d3be4a59354573e4180b3c9ad59e01e7, type: 2}
+  - {fileID: 11400000, guid: 3d99264be7094684b86e7e5db4d1d8c7, type: 2}
+  - {fileID: 11400000, guid: dbfd477f8b0eea54d99d1161fd9a1646, type: 2}
+  - {fileID: 11400000, guid: 034df05de55e37e40aa59909214ea5ea, type: 2}
+  - {fileID: 11400000, guid: cbf13968ee985b443886e62541e4d078, type: 2}
   gameState: {fileID: 11400000, guid: 152ce7efc8805c2438d1c8e74b960280, type: 2}
