@@ -20,6 +20,8 @@ public class CurrentSequence : ScriptableObject
     public void PickChoice(string nextStepID)
     {
         NextStepID = nextStepID;
+        if (nextStepID == null)
+            ShouldEnd = true;
         Message.Publish(new SequenceStepFinished());
     }
 }

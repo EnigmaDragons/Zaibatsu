@@ -72,6 +72,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 57212246b463bc5458105610984c266c, type: 2}
   - {fileID: 11400000, guid: cada720b6b68967499159b9924d76046, type: 2}
   - {fileID: 11400000, guid: fde0b3561ebcb1e4e977ff48988bea7c, type: 2}
+  - {fileID: 11400000, guid: aee4d8d5ea6da6543be756d406935639, type: 2}
+  - {fileID: 11400000, guid: 6fa60988a8f3389429fa09eecf608cf4, type: 2}
+  - {fileID: 11400000, guid: 46830f2721f51784f91c61242dbd2d29, type: 2}
+  - {fileID: 11400000, guid: 518ac28394927264c88a83cab3dc9ecd, type: 2}
+  - {fileID: 11400000, guid: 3fb07289836ca8049ada6528d968fc6f, type: 2}
+  - {fileID: 11400000, guid: 6d8a1aa68f2291448b221e75d3fa6625, type: 2}
+  - {fileID: 11400000, guid: 92d3fc45c74c2b341ae4be4ffe860aa4, type: 2}
+  - {fileID: 11400000, guid: 4d5cd79fc1c46af4bb97606192720273, type: 2}
   characters:
   - {fileID: 11400000, guid: a46797a11fec90f429e3f9fdcc23530f, type: 2}
   - {fileID: 11400000, guid: 6bb190ca8db795644b89fdd8b9823ecb, type: 2}
