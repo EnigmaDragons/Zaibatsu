@@ -13,6 +13,10 @@ GameObject:
   - component: {fileID: 1280788128033291206}
   - component: {fileID: 6425015240152076072}
   - component: {fileID: 3867484249210785371}
+  - component: {fileID: 8376435557887408160}
+  - component: {fileID: 3824693200361116009}
+  - component: {fileID: 742058983550939093}
+  - component: {fileID: 9189094801629410889}
   m_Layer: 5
   m_Name: ChoicesView
   m_TagString: Untagged
@@ -113,10 +117,118 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5dc945bc37b4d9b8960f81d4a9eeda9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrototype: {fileID: 7241137567673848718, guid: 3cb974da994a540468985b4aa546fc0f,
+  buttonPrototype: {fileID: 5553240147905183815, guid: 9e28bf02104353f41baeb30da0007ba2,
     type: 3}
   buttonParent: {fileID: 9192882096882736371}
   seq: {fileID: 11400000, guid: 9c4d449cb980d6645a1aeb716e477e3f, type: 2}
+--- !u!114 &8376435557887408160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841502317792657051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15d5ff66b7276842b4357acc6811c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys: 3100000001010000
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3867484249210785371}
+        m_MethodName: SelectChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3824693200361116009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841502317792657051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15d5ff66b7276842b4357acc6811c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys: 0201000032000000
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3867484249210785371}
+        m_MethodName: SelectChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &742058983550939093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841502317792657051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15d5ff66b7276842b4357acc6811c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys: 3300000003010000
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3867484249210785371}
+        m_MethodName: SelectChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9189094801629410889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841502317792657051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15d5ff66b7276842b4357acc6811c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys: 0401000034000000
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3867484249210785371}
+        m_MethodName: SelectChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8856826187382253805
 GameObject:
   m_ObjectHideFlags: 0

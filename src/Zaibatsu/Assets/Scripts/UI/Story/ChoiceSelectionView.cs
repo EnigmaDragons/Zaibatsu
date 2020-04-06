@@ -31,6 +31,9 @@ public class ChoiceSelectionView : MonoBehaviour
 
     public void SelectChoice(int index)
     {
+        if (index > _choices.Count)
+            return;
+        
         gameObject.SetActive(false);
         seq.PickChoice(_choices[index].NextID);
     }
