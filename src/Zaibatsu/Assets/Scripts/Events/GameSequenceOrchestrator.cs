@@ -44,7 +44,7 @@ public class GameSequenceOrchestrator : SequenceOrchestrator
     protected override bool IsCustomConditionMet(ConditionData data)
     {
         if (data.CustomType == NodeTypes.ItemPresentCondition)
-            return gameState.IsItemPresent(items.First(x => x.name == _mediaType.ConvertFrom<ItemPresentConditionData>(data.ConditionContent).Item));
+            return gameState.IsItemPresent(_mediaType.ConvertFrom<ItemPresentConditionData>(data.ConditionContent).Item);
         return false;
     }
 }

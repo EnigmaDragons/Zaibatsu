@@ -169,7 +169,7 @@ public abstract class SequenceOrchestrator : MonoBehaviour
         if (condition.Type == ConditionType.Or)
             return OrConditionMet(_mediaType.ConvertFrom<MultiConditionData>(condition.ConditionContent));
         if (condition.Type == ConditionType.Custom)
-            IsCustomConditionMet(condition);
+            return IsCustomConditionMet(condition);
         return false;
     }
 
