@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70a64aadd044ec8855c8e23db761393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 11400000, guid: 4c3be52ca14a70e4d9641a44f1a2be6b, type: 2}
+  music: {fileID: 11400000, guid: 7d3ad433d392f524abb24b2f5d1c1859, type: 2}
   musicPlayer: {fileID: 11400000, guid: 16e80fa199e59f64899c399896d887e5, type: 2}
 --- !u!4 &1889472577
 Transform:
