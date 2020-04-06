@@ -148,7 +148,7 @@ public class VNSaver
         stepData.Content = _mediaType.ConvertTo(new ConditionalData
         {
             ElseNextID = connections.Where(connection => connection.OutNodeID == node.ID)
-                .FirstOrDefault(connection => nodes.First(x => x.ID == connection.InNodeID).Type != NodeTypes.Condition)?.InNodeID,
+                .FirstOrDefault(connection => nodes.First(x => x.ID == connection.InNodeID).Type != NodeTypes.Condition && nodes.First(x => x.ID == connection.InNodeID).Type != NodeTypes.ItemPresentCondition)?.InNodeID,
             ConditionIDs = connections
                 .Where(connection => connection.OutNodeID == node.ID && (nodes.First(x => x.ID == connection.InNodeID).Type == NodeTypes.Condition 
                     || nodes.First(x => x.ID == connection.InNodeID).Type == NodeTypes.ItemPresentCondition))

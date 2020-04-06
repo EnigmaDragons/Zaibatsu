@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine;
@@ -91,5 +92,5 @@ public class CurrentGameState : SerializedScriptableObject
         Message.Publish(new GameStateChanged(gameState));
     }
 
-    public bool IsItemPresent(string item) => gameState.Items.Contains(item);
+    public bool IsItemPresent(Item item) => gameState.Items.Any(x => x == item.DisplayName);
 }
