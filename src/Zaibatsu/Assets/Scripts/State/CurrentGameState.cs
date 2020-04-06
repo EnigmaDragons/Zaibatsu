@@ -92,5 +92,5 @@ public class CurrentGameState : SerializedScriptableObject
         Message.Publish(new GameStateChanged(gameState));
     }
 
-    public bool IsItemPresent(Item item) => gameState.Items.Any(x => x == item.DisplayName);
+    public bool IsItemPresent(string item) => gameState.Items.Contains(item);
 }
