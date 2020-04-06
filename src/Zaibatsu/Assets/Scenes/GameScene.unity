@@ -1022,6 +1022,31 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 6727235875590009422, guid: d1160b1b5d1f8d343957ed204ec16d36,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727235875590009422, guid: d1160b1b5d1f8d343957ed204ec16d36,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727235875590009422, guid: d1160b1b5d1f8d343957ed204ec16d36,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727235875590009422, guid: d1160b1b5d1f8d343957ed204ec16d36,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727235875590009422, guid: d1160b1b5d1f8d343957ed204ec16d36,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7820741029319419004, guid: d1160b1b5d1f8d343957ed204ec16d36,
         type: 3}
       propertyPath: m_Name

@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5dc945bc37b4d9b8960f81d4a9eeda9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrototype: {fileID: 7241137567673848718, guid: 3cb974da994a540468985b4aa546fc0f,
+  buttonPrototype: {fileID: 5553240147905183815, guid: 9e28bf02104353f41baeb30da0007ba2,
     type: 3}
   buttonParent: {fileID: 9192882096882736371}
   seq: {fileID: 11400000, guid: 9c4d449cb980d6645a1aeb716e477e3f, type: 2}
